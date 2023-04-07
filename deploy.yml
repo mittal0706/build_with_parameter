@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: mittal0706/flask_app:
+        image: mittal0706/flask_app:${BUILD_NUMBER}
         ports:
         - containerPort: 5000
  
