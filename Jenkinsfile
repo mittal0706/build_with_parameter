@@ -11,7 +11,6 @@ pipeline{
     stage('Git Checkout') {
       steps {
         script {withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-		}
           }
         }
       }
