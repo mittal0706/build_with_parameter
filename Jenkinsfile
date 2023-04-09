@@ -10,9 +10,8 @@ pipeline{
   stages{
     stage('Git Checkout') {
       steps {
-        script {
-          withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-          git branch: dev, credentialsId: 'github', url: 'https://github.com/mittal0706/build_with_parameter.git'
+        script {withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+		}
           }
         }
       }
