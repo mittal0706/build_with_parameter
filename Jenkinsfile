@@ -19,7 +19,7 @@ pipeline{
       steps {
         script {
           withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-          git branch: env.GIT_BRANCH, credentialsId: 'github', url: 'https://github.com/mittal0706/flask_app.git'
+          git branch: env.GIT_BRANCH, credentialsId: 'github', url: 'https://github.com/mittal0706/build_with_parameter.git'
           }
         }
       }
@@ -69,7 +69,7 @@ pipeline{
             git commit -m "Update deployment image to version ${BUILD_NUMBER}"
 		        '''
             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-			    sh 'git push "https://github.com/mittal0706/flask_app.git" HEAD:${env.GIT_BRANCH}'
+			    sh 'git push "https://github.com/mittal0706/build_with_parameter.git" HEAD:${env.GIT_BRANCH}'
 		      }
 	      }
 	    }
