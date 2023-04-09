@@ -9,17 +9,10 @@ pipeline{
 	}
   stages{
     stage('Git Checkout') {
-      when {
-        expression {
-          env.GIT_BRANCH == 'origin/dev' ||
-          env.GIT_BRANCH == 'origin/uat' ||
-          env.GIT_BRANCH == 'origin/prod'
-        }
-      }
       steps {
         script {
           withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-          git branch: env.GIT_BRANCH, credentialsId: 'github', url: 'https://github.com/mittal0706/build_with_parameter.git'
+          git branch: dev, credentialsId: 'github', url: 'https://github.com/mittal0706/build_with_parameter.git'
           }
         }
       }
